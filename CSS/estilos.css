@@ -1,0 +1,105 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    font-size: 62.5%;
+}
+
+img {
+    width: 200px;
+    height: 200px !important;
+    object-fit: cover;
+}
+
+.contenedor{
+    display: grid;
+    grid-template-columns: 0.5fr 5fr 3fr 0.5fr;
+    grid-template-rows: 0.1fr 0.1fr 5fr;
+    grid-template-areas: 
+    ". titulo titulo ."
+    ". subtitulo subtitulo ."
+    ". productos carrito .";
+}
+
+ul li{
+    font-size: 2rem;
+    list-style-type: none;
+    text-transform: capitalize;
+    border: solid 0.1rem black;
+    margin: 0.5rem;
+    border-radius: 4px;
+    width: 35rem;
+}
+.carrito h2{
+    font-size: 3rem;
+}
+.card{
+    margin: 1rem;
+}
+.card h2{
+    text-transform: capitalize;
+    font-size: 2.5rem;
+}
+.card p{
+    font-size: 2.3rem;
+}
+.total{
+    font-size: 2rem;
+    margin: 1rem;
+}
+.titulo{
+    grid-area: titulo;
+    font-size: 8rem;
+    text-align: center;
+    margin: 1.5rem;
+    border-bottom: solid 0.1rem black;
+}
+.subtitulo{
+    grid-area: subtitulo;
+    font-size: 4rem;
+    text-align: center;
+    margin: 5rem;
+}
+.productos{
+    grid-area: productos;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.carrito{
+    grid-area: carrito;
+    text-align: center;
+}
+.add-button{
+    margin: 0.5rem;
+    width: 8rem;
+    height: 3rem;
+    border-radius: 4px;
+    border: solid 0.1rem rgb(20, 154, 217);
+    background-color: rgb(20, 154, 217);
+    color: white;
+}
+.btn-comprar{
+    width: 8rem;
+}
+button{
+    margin: 0.6rem;
+    width: 5rem;
+    height: 3rem;
+    border-radius: 4px;
+    border: solid 0.1rem rgb(246, 59, 59);
+    background-color: rgb(246, 59, 59);
+    color: white;
+}
+.titulocarrito{
+    margin-bottom: 1.5rem;
+}
+
+.carrito{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
