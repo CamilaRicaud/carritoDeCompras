@@ -1,0 +1,86 @@
+
+@import "tienda";
+
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    font-size: 62.5%;
+}
+
+body{
+    font-family: 'Noto Serif', serif;
+}
+.navbar-brand{
+    font-size: 2.5rem;
+}
+.nav-item{
+    font-size: 2rem;
+}
+h1{
+    font-family: 'DM Serif Display', serif;
+}
+h2{
+    font-family: 'DM Serif Display', serif;
+}
+.contenedorhome{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 13fr 10fr 1fr;
+    grid-template-areas: 
+    "header header"
+    "foto main"
+    "info info"
+    "footer footer";
+    .headerhome{
+        grid-area: header;
+        background-color: rgb(226, 213, 188);
+    }
+    .mainhome{
+        grid-area: main;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        .titulohome{
+            font-size: 8rem;
+            font-family: 'DM Serif Display', serif;
+        }
+        .subtitulohome{
+            font-size: 5rem;
+            font-family: 'Noto Serif', serif;
+        }
+        }
+    .infohome{
+        grid-area: info;
+        background-color: rgb(226, 213, 188);
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    .fotohome{
+        grid-area: foto;
+        background-image: url(../imagenes/8.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+    .footerhome{
+        grid-area: footer;
+    }
+}
+.cardhome{
+    background-color: white;
+    border-radius: 5%;
+    height: auto;
+    margin: 3rem;
+}
+
+.imghome{
+    border-top-right-radius: 5%;
+    border-top-left-radius: 5%;
+    width: 30rem;
+    height: 30rem;
+}

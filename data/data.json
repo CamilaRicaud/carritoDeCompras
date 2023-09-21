@@ -12,25 +12,25 @@
         "img":"cremafacial.jpg"
     },
     {
-        "id":2,
+        "id":3,
         "name":"protector solar",
         "precio":700,
         "img":"protectorsolar.jpg"
     },
     {
-        "id":3,
+        "id":4,
         "name":"tonico facial",
         "precio":6500,
         "img":"tonicofacial.jpg"
     },
     {
-        "id":4,
+        "id":5,
         "name":"serum nocturno",
         "precio":5000,
         "img":"serumniacinamida.jpg"
     },
     {
-        "id":5,
+        "id":6,
         "name":"crema corporal",
         "precio":7300,
         "img":"cremacorporal.jpg"

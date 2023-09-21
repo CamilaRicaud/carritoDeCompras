@@ -1,5 +1,6 @@
 img {
   width: 200px;
+  height: 200px !important;
   object-fit: cover;
 }
 
@@ -151,59 +152,37 @@ h2 {
 .contenedorhome {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 13fr 10fr 1fr;
-  grid-template-areas: "header header" "foto main" "info info" "footer footer";
+  grid-template-rows: 0.5fr 8fr 1fr 1fr;
+  grid-template-areas: "header header" "main main" "info info" "footer footer";
 }
 .contenedorhome .headerhome {
   grid-area: header;
-  background-color: rgb(226, 213, 188);
 }
 .contenedorhome .mainhome {
   grid-area: main;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  justify-content: center;
-}
-.contenedorhome .mainhome .titulohome {
-  font-size: 8rem;
-  font-family: "DM Serif Display", serif;
-}
-.contenedorhome .mainhome .subtitulohome {
-  font-size: 5rem;
-  font-family: "Noto Serif", serif;
-}
-.contenedorhome .infohome {
-  grid-area: info;
-  background-color: rgb(226, 213, 188);
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
-.contenedorhome .fotohome {
-  grid-area: foto;
-  background-image: url(../imagenes/8.jpg);
+  background-image: url(../imagenes/mainhome.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.contenedorhome .mainhome .titulohome {
+  text-shadow: 0 0 0.2em rgb(255, 253, 253);
+  font-size: 8rem;
+  color: rgb(20, 19, 19);
+}
+.contenedorhome .mainhome .subtitulohome {
+  text-shadow: 0 0 0.2em rgb(255, 253, 253);
+  font-size: 5rem;
+  color: white;
+}
+.contenedorhome .infohome {
+  grid-area: info;
 }
 .contenedorhome .footerhome {
   grid-area: footer;
-}
-
-.cardhome {
-  background-color: white;
-  border-radius: 5%;
-  height: auto;
-  margin: 3rem;
-}
-
-.imghome {
-  border-top-right-radius: 5%;
-  border-top-left-radius: 5%;
-  width: 30rem;
-  height: 30rem;
 }
 
 /*# sourceMappingURL=estilos.css.map */

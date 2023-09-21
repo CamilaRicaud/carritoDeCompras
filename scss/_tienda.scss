@@ -1,0 +1,116 @@
+
+
+img {
+    width: 200px;
+    object-fit: cover;
+}
+button{
+    font-size: 1.2rem;
+}
+.contenedor{
+    display: grid;
+    grid-template-columns: 0.5fr 5fr 3fr 0.5fr;
+    grid-template-rows: 0.1fr 0.1fr 5fr;
+    grid-template-areas: 
+    ". titulo titulo ."
+    ". subtitulo subtitulo ."
+    ". productos carrito .";
+    .titulo{
+        grid-area: titulo;
+        font-size: 8rem;
+        text-align: center;
+        margin: 1.5rem;
+        border-bottom: solid 0.1rem black;
+    }
+    .subtitulo{
+        grid-area: subtitulo;
+        font-size: 4rem;
+        text-align: center;
+        margin: 5rem;
+    }
+    .productos{
+        grid-area: productos;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    .carrito{
+        grid-area: carrito;
+        text-align: center;
+    }
+}
+.cart-product{
+    font-size: 2rem;
+    list-style-type: none;
+    text-transform: capitalize;
+    border: solid 0.1rem black;
+    margin: 0.5rem;
+    border-radius: 4px;
+    width: 33rem;
+}
+
+.mensaje{
+    font-size: 2rem;
+}
+.carrito h2{
+    font-size: 3rem;
+}
+.card{
+    margin: 1rem;
+    border: none;
+    h2{
+        text-transform: capitalize;
+        font-size: 2.7rem;
+    }
+    p{
+        font-size: 2.3rem;
+    }
+}
+
+.total{
+    font-size: 2rem;
+    margin: 1rem;
+}
+
+.add-button{
+    margin: 0.5rem;
+    width: 8rem;
+    height: 3rem;
+    border-radius: 4px;
+    border: solid 0.1rem rgb(20, 154, 217);
+    background-color: rgb(20, 154, 217);
+    color: white;
+}
+.btn-comprar{
+    margin: 0.6rem;
+    width: 8rem;
+    height: 3rem;
+    border-radius: 4px;
+    border: solid 0.1rem rgb(246, 59, 59);
+    background-color: rgb(246, 59, 59);
+    color: white;
+}
+.btn-remove{
+    margin: 0.6rem;
+    width: 5rem;
+    height: 3rem;
+    border-radius: 4px;
+    border: solid 0.1rem rgb(246, 59, 59);
+    background-color: rgb(246, 59, 59);
+    color: white;
+}
+.titulocarrito{
+    margin-bottom: 1.5rem;
+}
+
+.carrito{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.info{
+    color: black;
+    font-size: 1.5rem;
+}
