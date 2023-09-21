@@ -14,7 +14,7 @@ function crearHTML(){
     products.forEach(({id,name,precio,img})=>{
         const listItem = document.createElement('div');
         listItem.innerHTML=`<div class="card">
-        <img class="img" src="../imagenes/${img}" alt="${name}">
+        <img class="imgtienda" src="../imagenes/${img}" alt="${name}">
         <h2>${name}</h2>
         <p>$${precio.toFixed(2)}</p>
         <button class="add-button" data-id="${id}">Agregar</button>
@@ -40,7 +40,7 @@ function crearHTML(){
                 position: "right", // `left`, `center` or `right`
                 stopOnFocus: true, // Prevents dismissing of toast on hover
                 style: {
-                    background:"rgb(178, 199, 199)",
+                    background:"rgb(122, 119, 114)",
                 },
                 onClick: function(){} // Callback after click
             }).showToast();

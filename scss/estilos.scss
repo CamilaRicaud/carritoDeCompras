@@ -12,12 +12,7 @@ html{
 body{
     font-family: 'Noto Serif', serif;
 }
-.navbar-brand{
-    font-size: 2.5rem;
-}
-.nav-item{
-    font-size: 2rem;
-}
+
 h1{
     font-family: 'DM Serif Display', serif;
 }
@@ -26,42 +21,84 @@ h2{
 }
 .contenedorhome{
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 13fr 10fr 1fr;
+    grid-template-columns: 0.5fr 1fr 1fr 0.5fr;
+    grid-template-rows: 1fr 6fr 13fr 10fr 1fr;
     grid-template-areas: 
-    "header header"
-    "foto main"
-    "info info"
-    "footer footer";
+    "header header header header"
+    ". principal principal ."
+    "foto foto main main"
+    "info info info info"
+    "footer footer footer footer";
     .headerhome{
         grid-area: header;
         background-color: rgb(226, 213, 188);
+        padding-left: 2rem;
+        .navbar-brand{
+            font-size: 2.5rem;
+        }
+        .nav-item{
+            font-size: 2rem;
+        }
     }
-    .mainhome{
-        grid-area: main;
+    .principal{
+        grid-area: principal;
         display: flex;
         flex-direction: column;
         text-align: center;
         justify-content: center;
+        border-bottom: solid black 0.1rem;
         .titulohome{
-            font-size: 8rem;
+            font-size: 9rem;
             font-family: 'DM Serif Display', serif;
         }
         .subtitulohome{
             font-size: 5rem;
             font-family: 'Noto Serif', serif;
         }
+    }
+    .mainhome{
+        grid-area: main;
+        margin: 5rem;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        .titulohome{
+            font-size: 6rem;
+            font-family: 'DM Serif Display', serif;
         }
+    }
     .infohome{
         grid-area: info;
+        margin: 5rem;
         background-color: rgb(226, 213, 188);
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-around;
+        .cardhome{
+            background-color: white;
+            border-radius: 5%;
+            height: auto;
+            margin: 3rem;
+            .card-text{
+                font-family: 'Noto Serif', serif;
+                font-size: 2.2rem;
+                text-align: center;
+                font-weight: bold;
+                padding-top: 1rem;
+            }
+            .imghome{
+                border-top-right-radius: 5%;
+                border-top-left-radius: 5%;
+                width: 30rem;
+                height: 30rem;
+            }
+        }
     }
     .fotohome{
         grid-area: foto;
+        margin: 5rem;
         background-image: url(../imagenes/8.jpg);
         background-repeat: no-repeat;
         background-position: center;
@@ -69,18 +106,13 @@ h2{
     }
     .footerhome{
         grid-area: footer;
+        background-color: rgb(226, 213, 188);
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        p{
+            font-size: 1.5rem;
+        }
     }
-}
-.cardhome{
-    background-color: white;
-    border-radius: 5%;
-    height: auto;
-    margin: 3rem;
-}
-
-.imghome{
-    border-top-right-radius: 5%;
-    border-top-left-radius: 5%;
-    width: 30rem;
-    height: 30rem;
 }
