@@ -1,11 +1,13 @@
-const products =[
-    {id:1, name:"serum vit. c", precio: 5000, img:'serum.jpg' },
-    {id: 2, name:"crema facial", precio:4500, img:'cremafacial.jpg'},
-    {id: 3, name:"protector solar", precio:700, img:'protectorsolar.jpg'},
-    {id: 4, name:"tonico facial", precio:6500, img:'tonicofacial.jpg'},
-    {id: 5, name:"serum nocturno", precio:5000, img:'serumniacinamida.jpg'},
-    {id: 6, name:"crema corporal", precio:7300, img:'cremacorporal.jpg'}
-];
+let products 
+fetch('../data/data.json')
+.then(response=>{
+    return response.json()
+})
+.then(datos=>{
+products=datos;
+    crearHTML(datos)
+})
+
 
 const cart = JSON.parse(localStorage.getItem('cart')) || [];
 
@@ -49,36 +51,63 @@ function crearHTML(){
 }
 
 
+function calcIds (array,id) {
+    let cont = 0
+
+    array.forEach(i => {
+        i === id && cont++
+    })
+
+    return cont
+} 
+
+
 function updateCart(){
+    const cartLocal=localStorage.getItem('cart');
     const cartList = document.getElementById('cart-list');
     cartList.innerHTML='';
     let total= 0;
-    cart.forEach((product, index)=>{
-        const {name, precio}= product;
-        const cartItem = document.createElement('li');
-        cartItem.className='cart-product';
-        cartItem.textContent=`${name} - $${precio.toFixed(2)}`;
-        const removeButton= document.createElement('button');
-        removeButton.textContent='X';
-        removeButton.className='btn-remove';
-        removeButton.addEventListener('click', () =>{
-            cart.splice(index, 1);
-            updateCart();
-        });
-        cartItem.appendChild(removeButton);
-        cartList.appendChild(cartItem);
+    let cartProduct=[];
+    cart.forEach((product,index)=>{
+        const {name, precio, cant}= product;
+        let cantP = calcIds(cartProduct, product.id)
+        if(calcIds(cartProduct,product.id) < 1){
+            cartProduct.push(product.id);
+            const id = product.id
+            const cartItem = document.createElement('li');
+            cartItem.className=`cart-product`;
+            cartItem.id = product.id
+            cartItem.textContent=`${name} - $${precio.toFixed(2)} x${calcIds(cartProduct,product.id)} `;
+            const removeButton= document.createElement('button');
+            removeButton.textContent='X';
+            removeButton.className='btn-remove';
+            removeButton.addEventListener('click', () =>{
+                cart.splice(index,1);
+                updateCart();
+            });
+            cartItem.appendChild(removeButton);
+            cartList.appendChild(cartItem);
+        }else{
+            cartProduct.push(product.id);
+            const cartItem = document.getElementById(product.id)
+            const removeButton= document.createElement('button');
+            removeButton.textContent='X';
+            removeButton.className='btn-remove';
+            cartItem.className=`cart-product`;
+            cartItem.textContent=`${name} - $${precio.toFixed(2)} x${calcIds(cartProduct,product.id)} `;
+            cartItem.appendChild(removeButton);
+            removeButton.addEventListener('click', () =>{
+                cart.splice(0,calcIds(cartProduct,product.id));
+                updateCart();
+            });
+        }
         total += precio;
     });
     const totalElement = document.getElementById('total');
     totalElement.textContent= total.toFixed(2);
     localStorage.setItem('cart', JSON.stringify(cart));
-}
+};
 
-fetch('../data/data.json')
-.then(response=>response.json())
-.then(datos=>{
-    crearHTML(datos)
-})
 
 updateCart();
 
@@ -102,6 +131,7 @@ const btnVaciar = document.getElementById('vaciar-button')
 btnVaciar.addEventListener('click',()=>{
     if(cart !=""){
         cart.splice('cart');
+        cartProduct =[];
         updateCart();
         localStorage.removeItem('cart');
         p.innerText='Carrito vacio';
