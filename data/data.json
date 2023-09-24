@@ -34,5 +34,17 @@
         "name":"crema corporal",
         "precio":7300,
         "img":"cremacorporal.jpg"
+    },
+    {
+        "id":6,
+        "name":"oleo facial",
+        "precio": 3800,
+        "img":"fotoprincipal2.jpg"
+    },
+    {
+        "id":7,
+        "name":"tonico hidratante",
+        "precio":4200,
+        "img":"tonicohidratante.jpg"
     }
 ]
